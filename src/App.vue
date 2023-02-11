@@ -42,8 +42,22 @@
       <fl-button plain icon="about_line" type="warning"></fl-button>
       <fl-button plain icon="about_line" type="danger"></fl-button>
     </div>
+    <div class="row">
+      <fl-button round type="primary" @click="buttonClick">点击事件</fl-button>
+    </div>
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    buttonClick (e) {
+      alert('点击事件')
+    }
+  }
+}
+
+</script>
 
 <style lang="scss">
 .row{

@@ -3,14 +3,14 @@
       'is-plain':plain,
       'is-round':round,
       'is-circle':circle
-    }]">
+      }]"
+    >
       <span v-if="icon!='none'" class="fl-icon" :class="['icon-'+icon]"></span>
-      <span><slot></slot></span>
+      <span v-if="$slots.default"><slot></slot></span>
     </button>
 </template>
 
 <script>
-
 export default {
   name: 'FlButton',
   props: {
@@ -35,8 +35,10 @@ export default {
       default: 'none'
     }
   },
-  created () {
-    // console.log(this.type)
+  methods: {
+    // handleClick (e) {
+    //   this.$emit('click', e)
+    // }
   }
 }
 </script>
@@ -211,5 +213,8 @@ $danger-active-color: #f78989;
 .fl-button.is-circle {
   border-radius: 50%;
   padding: 12px;
+}
+.fl-button [class*=icon-]+span{
+  margin-left: 5px;
 }
 </style>

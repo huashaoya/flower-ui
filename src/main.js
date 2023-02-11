@@ -5,5 +5,5 @@ import store from './store'
 import FlButton from './components/button.vue'
 
 const app = createApp(App).use(store).use(router)
-app.component('fl-button', FlButton)
+app.component(FlButton.name, FlButton)
 app.mount('#app')

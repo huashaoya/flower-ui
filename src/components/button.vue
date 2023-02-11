@@ -2,8 +2,10 @@
     <button class="fl-button" :class="['fl-button--'+type,{
       'is-plain':plain,
       'is-round':round,
-      'is-circle':circle
+      'is-circle':circle,
+      'is-disabled':disabled
       }]"
+      :disabled="disabled"
     >
       <span v-if="icon!='none'" class="fl-icon" :class="['icon-'+icon]"></span>
       <span v-if="$slots.default"><slot></slot></span>
@@ -27,6 +29,10 @@ export default {
       default: false
     },
     circle: {
+      type: Boolean,
+      default: false
+    },
+    disabled: {
       type: Boolean,
       default: false
     },
@@ -216,5 +222,9 @@ $danger-active-color: #f78989;
 }
 .fl-button [class*=icon-]+span{
   margin-left: 5px;
+}
+.fl-button.is-disabled {
+  cursor: no-drop;
+  opacity: 0.6;
 }
 </style>

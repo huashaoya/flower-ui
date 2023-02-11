@@ -27,6 +27,14 @@
       <fl-button round type="danger">危险</fl-button>
     </div>
     <div class="row">
+      <fl-button round disabled >默认</fl-button>
+      <fl-button round disabled type="primary">提交</fl-button>
+      <fl-button round disabled type="success">成功</fl-button>
+      <fl-button round disabled type="info">信息</fl-button>
+      <fl-button round disabled type="warning">警告</fl-button>
+      <fl-button round disabled type="danger">危险</fl-button>
+    </div>
+    <div class="row">
       <fl-button circle>默</fl-button>
       <fl-button circle type="primary">提</fl-button>
       <fl-button circle type="success">成</fl-button>
@@ -44,6 +52,14 @@
     </div>
     <div class="row">
       <fl-button round type="primary" @click="buttonClick">点击事件</fl-button>
+      <fl-button round type="primary" @click="buttonClick" disabled>点击事件</fl-button>
+    </div>
+    <div class="row">
+      <fl-icon icon="address_book_line" :size="100"></fl-icon>
+      <fl-icon icon="address_book_line" :size="80" color="red"></fl-icon>
+      <fl-icon icon="address_book_line" :size="60" color="green"></fl-icon>
+      <fl-icon icon="address_book_line" :size="40" color="yellow"></fl-icon>
+      <fl-icon icon="address_book_line" :size="20" color="#1234ff"></fl-icon>
     </div>
   </div>
 </template>

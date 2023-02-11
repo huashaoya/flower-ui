@@ -1,0 +1,121 @@
+@font-face {
+  font-family: "iconfont"; /* Project id  */
+  src: url('iconfont.ttf?t=1676098678714') format('truetype');
+}
+
+.fl-icon {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-rss_line:before {
+  content: "\e64a";
+}
+
+.icon-add_circle_line:before {
+  content: "\e715";
+}
+
+.icon-about_line:before {
+  content: "\e716";
+}
+
+.icon-add_line:before {
+  content: "\e717";
+}
+
+.icon-address_book_line:before {
+  content: "\e718";
+}
+
+.icon-airplay_line:before {
+  content: "\e719";
+}
+
+.icon-aim_line:before {
+  content: "\e71a";
+}
+
+.icon-adjust_line:before {
+  content: "\e71b";
+}
+
+.icon-android_line:before {
+  content: "\e71c";
+}
+
+.icon-alert_line:before {
+  content: "\e71d";
+}
+
+.icon-arow_to_up_line:before {
+  content: "\e71e";
+}
+
+.icon-alarm_2_line:before {
+  content: "\e71f";
+}
+
+.icon-applet_line:before {
+  content: "\e720";
+}
+
+.icon-announcement_line:before {
+  content: "\e721";
+}
+
+.icon-apple_line:before {
+  content: "\e722";
+}
+
+.icon-arrow_down_circle_line:before {
+  content: "\e723";
+}
+
+.icon-arrow_down_line:before {
+  content: "\e724";
+}
+
+.icon-arrow_left_circle_line:before {
+  content: "\e725";
+}
+
+.icon-arrow_left_line:before {
+  content: "\e726";
+}
+
+.icon-arrow_right_circle_line:before {
+  content: "\e727";
+}
+
+.icon-arrow_up_circle_line:before {
+  content: "\e728";
+}
+
+.icon-arrow_right_line:before {
+  content: "\e729";
+}
+
+.icon-article_line:before {
+  content: "\e72a";
+}
+
+.icon-at_line:before {
+  content: "\e72b";
+}
+
+.icon-arrow_up_line:before {
+  content: "\e72c";
+}
+
+.icon-arow_to_down_line:before {
+  content: "\e72d";
+}
+
+.icon-activity_line:before {
+  content: "\e72e";
+}
+

@@ -1,5 +1,10 @@
 <template>
-    <button class="fl-button" :class="['fl-button--'+type]">
+    <button class="fl-button" :class="['fl-button--'+type,{
+      'is-plain':plain,
+      'is-round':round,
+      'is-circle':circle
+    }]">
+      <span v-if="icon!='none'" class="fl-icon" :class="['icon-'+icon]"></span>
       <span><slot></slot></span>
     </button>
 </template>
@@ -12,6 +17,22 @@ export default {
     type: {
       type: String,
       default: 'default'
+    },
+    plain: {
+      type: Boolean,
+      default: false
+    },
+    round: {
+      type: Boolean,
+      default: false
+    },
+    circle: {
+      type: Boolean,
+      default: false
+    },
+    icon: {
+      type: String,
+      default: 'none'
     }
   },
   created () {
@@ -116,5 +137,79 @@ $danger-active-color: #f78989;
     background-color: $danger-active-color;
     color: #fff;
   }
+}
+// 朴素按钮
+.fl-button.is-plain {
+  box-shadow: unset;
+  &:hover,
+  &:focus {
+    background: #fff;
+    border-color: #489eff;
+    color: #409eff;
+  }
+}
+.fl-button--primary.is-plain {
+  box-shadow: unset;
+  color: #409eff;
+  background: #ecf5ff;
+  &:hover,
+  &:focus {
+    background: #409eff;
+    border-color: #409eff;
+    color: #fff;
+  }
+}
+.fl-button--success.is-plain {
+  box-shadow: unset;
+  color: #67c23a;
+  background: #c2e7b0;
+  &:hover,
+  &:focus {
+    background: #67c23a;
+    border-color: #67c23a;
+    color: #fff;
+  }
+}
+.fl-button--info.is-plain {
+  box-shadow: unset;
+  color: #909399;
+  background: #d3d4d6;
+  &:hover,
+  &:focus {
+    background: #909399;
+    border-color: #909399;
+    color: #fff;
+  }
+}
+.fl-button--warning.is-plain {
+  box-shadow: unset;
+  color: #e6a23c;
+  background: #f5dab1;
+  &:hover,
+  &:focus {
+    background: #e6a23c;
+    border-color: #e6a23c;
+    color: #fff;
+  }
+}
+.fl-button--danger.is-plain {
+  box-shadow: unset;
+  color: #f56c6c;
+  background: #fbc4c4;
+  &:hover,
+  &:focus {
+    background: #f56c6c;
+    border-color: #f56c6c;
+    color: #fff;
+  }
+}
+.fl-button.is-round {
+  border-radius: 20px;
+  padding: 12px 23px;
+}
+// 圆形按钮
+.fl-button.is-circle {
+  border-radius: 50%;
+  padding: 12px;
 }
 </style>

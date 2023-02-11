@@ -3,7 +3,8 @@
     :style="
     `font-size:${size}px;
     color:${color};
-    `"></span>
+    `"
+    ></span>
 </template>
 <script>
 export default {

@@ -2,12 +2,8 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import FlButton from './components/button.vue'
 
-createApp(App).use(store).use(router).mount('#app')
-
-const obj = {
-  name: 'huashao', // 6666
-  age: 100
-}
-
-console.log(obj)
+const app = createApp(App).use(store).use(router)
+app.component('fl-button', FlButton)
+app.mount('#app')

@@ -62,6 +62,8 @@
       <fl-icon icon="address_book_line" :size="40" color="yellow"></fl-icon>
       <fl-icon icon="address_book_line" :size="20" color="#1234ff"></fl-icon>
     </div>
+    下拉选择：
+    <fl-select></fl-select>
   </div>
 </template>
 

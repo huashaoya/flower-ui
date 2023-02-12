@@ -54,6 +54,7 @@
       <fl-button round type="primary" @click="buttonClick">点击事件</fl-button>
       <fl-button round type="primary" @click="buttonClick" disabled>点击事件</fl-button>
     </div>
+    icon:
     <div class="row">
       <fl-icon icon="address_book_line" :size="100"></fl-icon>
       <fl-icon icon="address_book_line" :size="80" color="red"></fl-icon>

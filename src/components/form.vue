@@ -11,6 +11,15 @@ export default {
     model: {
       type: Object,
       required: true
+    },
+    labelWidth: {
+      type: String,
+      default: '80px'
+    }
+  },
+  provide () {
+    return {
+      form: this
     }
   }
 }

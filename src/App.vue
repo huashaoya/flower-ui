@@ -67,11 +67,11 @@
     input:
      <fl-input placeholder="请输入用户名" type="password" name="username"></fl-input>
     <div> form:</div>
-    <fl-form :model="model">
-      <fl-form-item label="用户名">
+    <fl-form :model="model" label-width="60px">
+      <fl-form-item label="用户名:">
         <fl-input placeholder="请输入用户名" :model="model.username"></fl-input>
       </fl-form-item>
-      <fl-form-item label="性别">
+      <fl-form-item label="性别:">
         <fl-input placeholder="请输入性别" :model="model.sex"></fl-input>
       </fl-form-item>
     </fl-form>

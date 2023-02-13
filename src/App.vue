@@ -64,6 +64,12 @@
     </div>
     下拉选择：
     <fl-select></fl-select>
+    form:
+    <fl-form :model="model">
+      <fl-form-item label="用户名">
+        <input placeholder="请输入用户名">
+      </fl-form-item>
+    </fl-form>
   </div>
 </template>
 

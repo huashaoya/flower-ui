@@ -18,7 +18,6 @@ app.component(FlButton.name, FlButton)
 app.component(FlIcon.name, FlIcon)
 app.component(FlSelect.name, FlSelect)
 app.component(FlInput.name, FlInput)
-
 app.component(FlForm.name, FlForm)
 app.component(FlFormItem.name, FlFormItem)
 app.mount('#app')

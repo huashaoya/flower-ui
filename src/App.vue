@@ -66,10 +66,10 @@
     <fl-select></fl-select>
     input:
      <fl-input placeholder="请输入用户名" type="password" name="username"></fl-input>
-    form:
+    <div> form:</div>
     <fl-form :model="model">
       <fl-form-item label="用户名">
-        <input placeholder="请输入用户名">
+        <fl-input placeholder="请输入用户名"></fl-input>
       </fl-form-item>
     </fl-form>
   </div>

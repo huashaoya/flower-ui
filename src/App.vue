@@ -64,6 +64,8 @@
     </div>
     下拉选择：
     <fl-select></fl-select>
+    input:
+     <fl-input placeholder="请输入用户名" type="password" name="username"></fl-input>
     form:
     <fl-form :model="model">
       <fl-form-item label="用户名">
@@ -90,5 +92,10 @@ export default {
   .fl-button{
     margin-right: 10px;
   }
+}
+#app{
+.fl-input{
+  width: 200px;
+}
 }
 </style>

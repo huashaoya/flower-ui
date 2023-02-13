@@ -1,6 +1,6 @@
 <template>
   <div class="fl-input">
-    <input class="fl-input_inner" placeholder="请输入用户名" type="type" name="name"/>
+    <input class="fl-input_inner" :class="{'is-disabled': disabled}" :placeholder="placeholder" :type="type" :name="name" :disabled="disabled" :value="value" @input="handleInput"/>
   </div>
 </template>
 
@@ -19,6 +19,19 @@ export default {
     name: {
       type: String,
       default: ''
+    },
+    disabled: {
+      type: Boolean,
+      default: false// 禁用输入框
+    },
+    value: {
+      type: String,
+      default: ''
+    }
+  },
+  methods: {
+    handleInput (e) {
+      this.$emit('input', e.target.value)
     }
   }
 }
@@ -50,6 +63,12 @@ export default {
     &:focus {
       outline: none;
       border-color: black;
+    }
+    &.is-disabled {// 禁用样式
+      background-color: aliceblue;
+      border-color: rgb(79, 104, 203);
+      color: rgb(154, 184, 210);
+      cursor: not-allowed;// 有个禁止标志
     }
   }
 }

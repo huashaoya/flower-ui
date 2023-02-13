@@ -64,13 +64,29 @@
     </div>
     下拉选择：
     <fl-select></fl-select>
-    input:
-     <fl-input placeholder="请输入用户名" type="password" name="username"></fl-input>
+    <div>input:</div>
+    <div class="row">
+    禁用框:
+     <fl-input placeholder="请输入用户名" type="password" name="username" disabled></fl-input>
+    </div>
+    <div class="row">
+    密码框:
+    <fl-input placeholder="请输入密码" type="password"></fl-input>
+    </div>
+    <div class="row">
+    输入绑定:
+    <fl-input placeholder="请输入用户名" v-model="username"></fl-input>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
+  data () {
+    return {
+      username: 'ab'
+    }
+  },
   methods: {
     buttonClick (e) {
       alert('点击事件')

@@ -69,7 +69,10 @@
     <div> form:</div>
     <fl-form :model="model">
       <fl-form-item label="用户名">
-        <fl-input placeholder="请输入用户名"></fl-input>
+        <fl-input placeholder="请输入用户名" :model="model.username"></fl-input>
+      </fl-form-item>
+      <fl-form-item label="性别">
+        <fl-input placeholder="请输入性别" :model="model.sex"></fl-input>
       </fl-form-item>
     </fl-form>
   </div>
@@ -77,6 +80,14 @@
 
 <script>
 export default {
+  data () {
+    return {
+      model: {
+        username: '',
+        sex: ''
+      }
+    }
+  },
   methods: {
     buttonClick (e) {
       alert('点击事件')

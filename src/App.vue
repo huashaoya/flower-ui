@@ -64,19 +64,17 @@
     </div>
     下拉选择：
     <fl-select></fl-select>
-    <div>input:</div>
-    <div class="row">
-    禁用框:
-     <fl-input placeholder="请输入用户名" type="password" name="username" disabled></fl-input>
-    </div>
-    <div class="row">
-    密码框:
-    <fl-input placeholder="请输入密码" type="password"></fl-input>
-    </div>
-    <div class="row">
-    输入绑定:
-    <fl-input placeholder="请输入用户名" v-model="username"></fl-input>
-    </div>
+    input:
+     <fl-input placeholder="请输入用户名" type="password" name="username"></fl-input>
+    <div> form:</div>
+    <fl-form :model="model">
+      <fl-form-item label="用户名">
+        <fl-input placeholder="请输入用户名" :model="model.username"></fl-input>
+      </fl-form-item>
+      <fl-form-item label="性别">
+        <fl-input placeholder="请输入性别" :model="model.sex"></fl-input>
+      </fl-form-item>
+    </fl-form>
   </div>
 </template>
 
@@ -84,7 +82,10 @@
 export default {
   data () {
     return {
-      username: 'ab'
+      model: {
+        username: '',
+        sex: ''
+      }
     }
   },
   methods: {

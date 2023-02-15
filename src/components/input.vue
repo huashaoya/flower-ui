@@ -1,6 +1,6 @@
 <template>
   <div class="fl-input">
-    <input class="fl-input_inner" :class="{'is-disabled': disabled}" :placeholder="placeholder" :type="type" :name="name" :disabled="disabled" :value="value" @input="handleInput"/>
+    <input class="fl-input_inner" :class="{'is-disabled': disabled}" :placeholder="placeholder" :type="type" :name="name" :disabled="disabled" :value="modelValue" @input="handleInput"/>
   </div>
 </template>
 
@@ -24,14 +24,14 @@ export default {
       type: Boolean,
       default: false// 禁用输入框
     },
-    value: {
+    modelValue: {
       type: String,
       default: ''
     }
   },
   methods: {
     handleInput (e) {
-      this.$emit('input', e.target.value)
+      this.$emit('update:modelValue', e.target.value)
     }
   }
 }

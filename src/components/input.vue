@@ -45,10 +45,10 @@ export default {
   display: inline-block;
   .fl-input_inner {
     -webkit-appearance: none;
-    background-color: #8dc3fc;
+    background-color: white;
     background-image: none;
     border-radius: 4px;
-    border: 1px solid rgb(79, 104, 203);
+    border: 1px solid #dcdfe6;//rgb(79, 104, 203)
     box-sizing: border-box;
     color: black;
     display: inline-block;
@@ -65,8 +65,8 @@ export default {
       border-color: black;
     }
     &.is-disabled {// 禁用样式
-      background-color: aliceblue;
-      border-color: rgb(79, 104, 203);
+      background-color: white;
+      border-color: #dcdfe6;//rgb(79, 104, 203)
       color: rgb(154, 184, 210);
       cursor: not-allowed;// 有个禁止标志
     }

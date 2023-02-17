@@ -90,6 +90,7 @@
 
     <br>
     <fl-switch v-model="model.active" activeColor="red" inActiveColor="black"></fl-switch>
+    <fl-upload></fl-upload>
   </div>
 </template>
 
@@ -100,7 +101,7 @@ export default {
       model: {
         username: '',
         sex: '',
-        active: true
+        active: false
       }
     }
   },

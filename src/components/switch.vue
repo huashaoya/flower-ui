@@ -45,6 +45,7 @@ export default {
     }
     onMounted(() => {
       setColor()
+      stateDialog.value = props.modelValue ? 'on' : 'off'
     })
     return {
       stateChange,

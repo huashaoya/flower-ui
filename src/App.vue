@@ -77,6 +77,8 @@
     输入绑定:
     <fl-input placeholder="请输入用户名" v-model="model.username"></fl-input>
     </div>
+    <div>radio:</div>
+    <fl-radio></fl-radio>
     <div> form:</div>
     <fl-form :model="model" label-width="60px">
       <fl-form-item label="用户名:">

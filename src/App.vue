@@ -87,6 +87,9 @@
       </fl-form-item>
     </fl-form>
     {{ model }}
+
+    <br>
+    <fl-switch v-model="model.active" activeColor="red" inActiveColor="black"></fl-switch>
   </div>
 </template>
 
@@ -96,7 +99,8 @@ export default {
     return {
       model: {
         username: '',
-        sex: ''
+        sex: '',
+        active: true
       }
     }
   },

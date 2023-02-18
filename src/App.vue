@@ -79,6 +79,12 @@
     </div>
     <div>radio:</div>
     <fl-radio>radio</fl-radio>
+    <div>radioGroup:</div>
+    <fl-radio-group v-model="model.gender">
+      <fl-radio label="0">1</fl-radio>
+      <fl-radio label="1">2</fl-radio>
+      <fl-radio label="2">3</fl-radio>
+    </fl-radio-group>
     <div> form:</div>
     <fl-form :model="model" label-width="60px">
       <fl-form-item label="用户名:">

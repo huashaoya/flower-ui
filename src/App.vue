@@ -85,8 +85,8 @@
         <fl-input placeholder="请输入用户名" v-model="model.username"></fl-input>
       </fl-form-item>
       <fl-form-item label="性别:">
-        <fl-radio label="0" v-model="gender">男</fl-radio>
-        <fl-radio label="1" v-model="gender">女</fl-radio>
+        <fl-radio label="0" v-model="model.gender">男</fl-radio>
+        <fl-radio label="1" v-model="model.gender">女</fl-radio>
       </fl-form-item>
     </fl-form>
     {{ model }}

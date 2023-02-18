@@ -1,5 +1,5 @@
 <template>
-    <label :class="['fl-radio', isChecked ? 'is-checked' : '']">
+    <label :class="['fl-radio', label==modelValue ? 'is-checked' : '']">
       <span class="fl-radio__input">
         <span class="fl-radio__inner"></span>
         <input
@@ -20,12 +20,22 @@
 <script>
 export default {
   name: 'FlRadio',
+  computed: {
+    model: {
+      get () {
+        return this.modelValue
+      },
+      set (value) {
+        this.$emit('update:modelValue', value)
+      }
+    }
+  },
   props: {
     label: {
       type: [String, Number, Boolean],
       default: ''
     },
-    value: null,
+    modelValue: null,
     name: {
       type: String,
       default: null
@@ -102,9 +112,9 @@ export default {
     padding-left: 10px;
   }
 }
-.d-radio.is-checked {
-  .d-radio__input {
-    .d-radio__inner {
+.fl-radio.is-checked {
+  .fl-radio__input {
+    .fl-radio__inner {
       border-color: #409eff;
       background-color: #409eff;
       &::after {
@@ -112,7 +122,7 @@ export default {
       }
     }
   }
-  .d-radio__label {
+  .fl-radio__label {
     color: #409eff;
   }
 }

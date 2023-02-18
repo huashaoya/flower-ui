@@ -78,14 +78,15 @@
     <fl-input placeholder="请输入用户名" v-model="model.username"></fl-input>
     </div>
     <div>radio:</div>
-    <fl-radio></fl-radio>
+    <fl-radio>radio</fl-radio>
     <div> form:</div>
     <fl-form :model="model" label-width="60px">
       <fl-form-item label="用户名:">
         <fl-input placeholder="请输入用户名" v-model="model.username"></fl-input>
       </fl-form-item>
       <fl-form-item label="性别:">
-        <fl-input placeholder="请输入性别" v-model="model.sex"></fl-input>
+        <fl-radio label="0" v-model="gender">男</fl-radio>
+        <fl-radio label="1" v-model="gender">女</fl-radio>
       </fl-form-item>
     </fl-form>
     {{ model }}
@@ -102,7 +103,7 @@ export default {
     return {
       model: {
         username: '',
-        sex: '',
+        gender: 0,
         active: false
       }
     }

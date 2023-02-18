@@ -90,10 +90,18 @@
       </fl-form-item>
     </fl-form>
     {{ model }}
-
     <br>
     <fl-switch v-model="model.active" activeColor="red" inActiveColor="black"></fl-switch>
     <fl-upload></fl-upload>
+      <!-- ***********dialog********* -->
+    <fl-button type="primary" @click="visible=true">点击打开 dialog</fl-button>
+    <fl-dialog :visible="visible" @close="close">
+      <template #footer>
+        <fl-button plain @click="visible=false">取消</fl-button>
+        <fl-button type="primary" @click="visible=false">确定</fl-button>
+      </template>
+    </fl-dialog>
+  <!-- ***********dialog********* -->
   </div>
 </template>
 
@@ -105,12 +113,16 @@ export default {
         username: '',
         gender: 0,
         active: false
-      }
+      },
+      visible: false
     }
   },
   methods: {
     buttonClick (e) {
       alert('点击事件')
+    },
+    close (value) {
+      this.visible = value
     }
   }
 }

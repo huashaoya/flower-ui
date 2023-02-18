@@ -10,6 +10,7 @@ import FlRadio from './components/radio.vue'
 import FlForm from './components/form.vue'
 import FlFormItem from './components/form-item.vue'
 import FlSwitch from './components/switch.vue'
+import FlDialog from './components/dialog.vue'
 import FlUpload from './components/upload.vue'
 import './assets/font/iconfont.css'
 // import FlowerUI from '../packages'
@@ -24,5 +25,6 @@ app.component(FlRadio.name, FlRadio)
 app.component(FlForm.name, FlForm)
 app.component(FlFormItem.name, FlFormItem)
 app.component(FlSwitch.name, FlSwitch)
+app.component(FlDialog.name, FlDialog)
 app.component(FlUpload.name, FlUpload)
 app.mount('#app')

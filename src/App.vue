@@ -77,27 +77,30 @@
     输入绑定:
     <fl-input placeholder="请输入用户名" v-model="model.username"></fl-input>
     </div>
+    <div>radio:</div>
+    <fl-radio>radio</fl-radio>
     <div> form:</div>
     <fl-form :model="model" label-width="60px">
       <fl-form-item label="用户名:">
         <fl-input placeholder="请输入用户名" v-model="model.username"></fl-input>
       </fl-form-item>
       <fl-form-item label="性别:">
-        <fl-input placeholder="请输入性别" v-model="model.sex"></fl-input>
+        <fl-radio label="0" v-model="gender">男</fl-radio>
+        <fl-radio label="1" v-model="gender">女</fl-radio>
       </fl-form-item>
     </fl-form>
     {{ model }}
     <br>
-  <fl-switch v-model="model.active" activeColor="red" inActiveColor="black"></fl-switch>
-  <br>
-  <!-- ***********dialog********* -->
-  <fl-button type="primary" @click="visible=true">点击打开 dialog</fl-button>
-  <fl-dialog :visible="visible" @close="close">
-    <template #footer>
-      <fl-button plain @click="visible=false">取消</fl-button>
-      <fl-button type="primary" @click="visible=false">确定</fl-button>
-    </template>
-  </fl-dialog>
+    <fl-switch v-model="model.active" activeColor="red" inActiveColor="black"></fl-switch>
+    <fl-upload></fl-upload>
+      <!-- ***********dialog********* -->
+    <fl-button type="primary" @click="visible=true">点击打开 dialog</fl-button>
+    <fl-dialog :visible="visible" @close="close">
+      <template #footer>
+        <fl-button plain @click="visible=false">取消</fl-button>
+        <fl-button type="primary" @click="visible=false">确定</fl-button>
+      </template>
+    </fl-dialog>
   <!-- ***********dialog********* -->
   </div>
 </template>
@@ -108,8 +111,8 @@ export default {
     return {
       model: {
         username: '',
-        sex: '',
-        active: true
+        gender: 0,
+        active: false
       },
       visible: false
     }

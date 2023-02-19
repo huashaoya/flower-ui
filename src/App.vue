@@ -85,6 +85,8 @@
       <fl-radio label="1">2</fl-radio>
       <fl-radio label="2">3</fl-radio>
     </fl-radio-group>
+    <div>checkbox:</div>
+    <fl-checkbox v-model="model.checkbox">checkMe</fl-checkbox>
     <div> form:</div>
     <fl-form :model="model" label-width="60px">
       <fl-form-item label="用户名:">
@@ -118,7 +120,8 @@ export default {
       model: {
         username: '',
         gender: 0,
-        active: false
+        active: false,
+        checkbox: false
       },
       visible: false
     }

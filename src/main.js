@@ -13,6 +13,8 @@ import FlFormItem from './components/form-item.vue'
 import FlSwitch from './components/switch.vue'
 import FlDialog from './components/dialog.vue'
 import FlUpload from './components/upload.vue'
+import FlCheckbox from './components/checkbox.vue'
+import FlCheckboxGroup from './components/checkbox-group.vue'
 import './assets/font/iconfont.css'
 // import FlowerUI from '../packages'
 
@@ -29,4 +31,6 @@ app.component(FlFormItem.name, FlFormItem)
 app.component(FlSwitch.name, FlSwitch)
 app.component(FlDialog.name, FlDialog)
 app.component(FlUpload.name, FlUpload)
+app.component(FlCheckbox.name, FlCheckbox)
+app.component(FlCheckboxGroup.name, FlCheckboxGroup)
 app.mount('#app')

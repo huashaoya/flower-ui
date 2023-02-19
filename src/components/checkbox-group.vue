@@ -1,10 +1,24 @@
 <template>
-    <div></div>
+    <div class="fl-checkbox-group">
+        <slot></slot>
+    </div>
 </template>
 
-<scrtpt>
-
-</scrtpt>
+<script>
+export default {
+  name: 'FlCheckboxGroup',
+  props: {
+    modelValue: {
+      type: Array
+    }
+  },
+  provide () {
+    return {
+      CheckboxGroup: this
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 

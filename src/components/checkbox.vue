@@ -4,7 +4,6 @@
       'fl-checkbox',
       isChecked ? 'is-checked' : '',
       disabled ? 'is-disabled' : '',
-      mimicry ? 'is-mimicry' : ''
     ]"
   >
     <span class="fl-checkbox__input">
@@ -25,7 +24,8 @@
       />
     </span>
     <span class="fl-checkbox__label">
-      <slot>选项</slot>
+      <slot></slot>
+      <template v-if="!$slots.default">{{ label }}</template>
     </span>
   </label>
 </template>
@@ -34,13 +34,25 @@
 export default {
   name: 'FlCheckbox',
   computed: {
+    isGroup () {
+      return !!this.CheckboxGroup
+    },
     model: {
       get () {
-        return this.modelValue
+        return this.isGroup ? this.CheckboxGroup.modelValue : this.modelValue
       },
       set (value) {
         this.$emit('update:modelValue', value)
+        this.isGroup ? this.CheckboxGroup.$emit('update:modelValue', value) : this.$emit('update:modelValue', value)
       }
+    },
+    isChecked () {
+      return this.isGroup ? this.model.includes(this.label) : this.model
+    }
+  },
+  inject: {
+    CheckboxGroup: {
+      default: ''
     }
   },
   props: {
@@ -55,6 +67,14 @@ export default {
     label: {
       type: String,
       default: ''
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    activeColor: {
+      type: String,
+      default: '#409eff'
     }
   }
 }
@@ -150,12 +170,6 @@ export default {
   span.d-checkbox__label {
     color: #c0c4cc;
     cursor: not-allowed;
-  }
-}
-.fl-checkbox.is-mimicry {
-  .fl-checkbox__inner {
-    box-shadow: inset 3px 2px 4px #cacaca48,
-      inset -3px -2px 4px rgba(255, 255, 255, 0.377);
   }
 }
 </style>

@@ -22,20 +22,21 @@ export default {
   name: 'FlRadio',
   inject: {
     RadioGroup: {
-      dafault: ''
+      // dafault: ''
+      default: () => ({ name: 'John' })
     }
   },
   computed: {
     model: {
       get () {
-        return this.isGoup ? this.RadioGroup.modelValue : this.modelValue
+        return this.isGroup ? this.RadioGroup.modelValue : this.modelValue
       },
       set (value) {
         this.$emit('update:modelValue', value)
-        this.isGoup ? this.RadioGroup.$emit('update:modelValue', value) : this.$emit('update:modelValue', value)
+        this.isGroup ? this.RadioGroup.$emit('update:modelValue', value) : this.$emit('update:modelValue', value)
       }
     },
-    isGoup () {
+    isGroup () {
       return !!this.RadioGroup
     }
   },

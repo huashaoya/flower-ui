@@ -30,7 +30,6 @@ export default {
     const stateDialog = ref('off')
 
     async function handleClick () {
-      console.log(props)
       content.emit('update:modelValue', !props.modelValue)
       stateChange.value = props.modelValue
       await nextTick()

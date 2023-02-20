@@ -105,15 +105,26 @@
     </fl-form>
     {{ model }}
     <br>
-    <fl-switch v-model="model.active" activeColor="red" inActiveColor="black"></fl-switch>
-    <fl-upload></fl-upload>
-    <fl-button type="primary" @click="visible=true">点击打开 Modal</fl-button>
+      <!-- ***********dialog********* -->
+    <fl-button type="primary" @click="visible=true">点击打开 dialog</fl-button>
+    <fl-dialog :visible="visible" @close="close">
+      <fl-button type="primary" @click="visible=true">点击打开 Modal</fl-button>
+    </fl-dialog>
+    <!-- ***********dialog********* -->
     <fl-modal :visible="visible" @close="close">
       <template #footer>
         <fl-button plain @click="visible=false">取消</fl-button>
         <fl-button type="primary" @click="visible=false">确定</fl-button>
       </template>
     </fl-modal>
+    <br>
+    <fl-switch v-model="active" activeColor="red" inActiveColor="black"></fl-switch>
+    {{active}}
+    <div class="row">
+      <fl-upload @change="change" :multiple="multiple" :btnShow="btnShow" :dragShow="dragShow"></fl-upload>
+      <fl-upload type="success" label="上传图片" :drag="true"></fl-upload>
+      <fl-upload type="danger"></fl-upload>
+    </div>
   </div>
 </template>
 
@@ -124,11 +135,14 @@ export default {
       model: {
         username: '',
         gender: 0,
-        active: false,
         checkbox: false,
         checkboxGroup: []
       },
-      visible: false
+      visible: false,
+      active: false,
+      multiple: false,
+      btnShow: true,
+      dragShow: false
     }
   },
   methods: {
@@ -137,6 +151,9 @@ export default {
     },
     close (value) {
       this.visible = value
+    },
+    change (e) {
+      console.log(e)
     }
   }
 }

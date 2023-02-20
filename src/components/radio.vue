@@ -22,8 +22,8 @@ export default {
   name: 'FlRadio',
   inject: {
     RadioGroup: {
-      // dafault: ''
-      default: () => ({ name: 'John' })
+      default: ''
+      // default: () => ({ name: 'John' })
     }
   },
   computed: {

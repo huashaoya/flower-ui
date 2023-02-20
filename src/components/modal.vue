@@ -1,6 +1,6 @@
 <template>
 <transition name="modal-fade">
-  <div class="fl-modal_wrapper" v-show="visible" @click.self="handleCloseWrapper">
+  <div class="fl-modal_wrapper" v-show="modalVisible" @click.self="handleCloseWrapper">
     <div class="fl-modal" :style="{width, marginTop: top}">
       <div class="fl-modal_header">
         <slot name="title">
@@ -40,7 +40,7 @@ export default {
       type: String,
       default: '15vh'
     },
-    visible: {
+    modalVisible: {
       type: Boolean,
       default: false
     },

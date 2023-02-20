@@ -1,5 +1,5 @@
 <template>
-    <label :class="['fl-radio', label==modelValue ? 'is-checked' : '']">
+    <label :class="['fl-radio', label==model ? 'is-checked' : '']">
       <span class="fl-radio__input">
         <span class="fl-radio__inner"></span>
         <input
@@ -20,14 +20,24 @@
 <script>
 export default {
   name: 'FlRadio',
+  inject: {
+    RadioGroup: {
+      // dafault: ''
+      default: () => ({ name: 'John' })
+    }
+  },
   computed: {
     model: {
       get () {
-        return this.modelValue
+        return this.isGroup ? this.RadioGroup.modelValue : this.modelValue
       },
       set (value) {
         this.$emit('update:modelValue', value)
+        this.isGroup ? this.RadioGroup.$emit('update:modelValue', value) : this.$emit('update:modelValue', value)
       }
+    },
+    isGroup () {
+      return !!this.RadioGroup
     }
   },
   props: {

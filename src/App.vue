@@ -79,6 +79,20 @@
     </div>
     <div>radio:</div>
     <fl-radio>radio</fl-radio>
+    <div>radioGroup:</div>
+    <fl-radio-group v-model="model.gender">
+      <fl-radio label="0">1</fl-radio>
+      <fl-radio label="1">2</fl-radio>
+      <fl-radio label="2">3</fl-radio>
+    </fl-radio-group>
+    <div>checkbox:</div>
+    <fl-checkbox v-model="model.checkbox">checkMe</fl-checkbox>
+    <div>checkbox-group</div>
+    <fl-checkbox-group v-model="model.checkboxGroup">
+      <fl-checkbox label="html"></fl-checkbox>
+      <fl-checkbox label="css"></fl-checkbox>
+      <fl-checkbox label="javaScript"></fl-checkbox>
+    </fl-checkbox-group>
     <div> form:</div>
     <fl-form :model="model" label-width="60px">
       <fl-form-item label="用户名:">
@@ -94,12 +108,15 @@
       <!-- ***********dialog********* -->
     <fl-button type="primary" @click="visible=true">点击打开 dialog</fl-button>
     <fl-dialog :visible="visible" @close="close">
+      <fl-button type="primary" @click="visible=true">点击打开 Modal</fl-button>
+    </fl-dialog>
+    <!-- ***********dialog********* -->
+    <fl-modal :visible="visible" @close="close">
       <template #footer>
         <fl-button plain @click="visible=false">取消</fl-button>
         <fl-button type="primary" @click="visible=false">确定</fl-button>
       </template>
-    </fl-dialog>
-  <!-- ***********dialog********* -->
+    </fl-modal>
     <br>
     <fl-switch v-model="active" activeColor="red" inActiveColor="black"></fl-switch>
     {{active}}
@@ -117,7 +134,9 @@ export default {
     return {
       model: {
         username: '',
-        gender: 0
+        gender: 0,
+        checkbox: false,
+        checkboxGroup: []
       },
       visible: false,
       active: false,

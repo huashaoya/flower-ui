@@ -105,18 +105,20 @@
     </fl-form>
     {{ model }}
     <br>
-      <!-- ***********dialog********* -->
-    <fl-button type="primary" @click="visible=true">点击打开 dialog</fl-button>
-    <fl-dialog :visible="visible" @close="close">
-      <fl-button type="primary" @click="visible=true">点击打开 Modal</fl-button>
-    </fl-dialog>
-    <!-- ***********dialog********* -->
-    <fl-modal :visible="visible" @close="close">
+    <br>
+   <div id="modal">
+    <fl-button type="primary" @click="modalVisible=true">点击打开 Modal</fl-button>
+    <fl-modal :modalVisible="modalVisible" @close="close">
       <template #footer>
-        <fl-button plain @click="visible=false">取消</fl-button>
-        <fl-button type="primary" @click="visible=false">确定</fl-button>
+        <fl-button plain @click="modalVisible=false">取消</fl-button>
+        <fl-button type="primary" @click="modalVisible=false">确定</fl-button>
       </template>
     </fl-modal>
+   </div>
+    <br>
+   <div id="dropdown">
+    <fl-dropdown></fl-dropdown>
+   </div>
     <br>
     <fl-switch v-model="active" activeColor="red" inActiveColor="black"></fl-switch>
     {{active}}
@@ -138,7 +140,7 @@ export default {
         checkbox: false,
         checkboxGroup: []
       },
-      visible: false,
+      modalVisible: false,
       active: false,
       multiple: false,
       btnShow: true,
@@ -150,7 +152,7 @@ export default {
       alert('点击事件')
     },
     close (value) {
-      this.visible = value
+      this.modalVisible = value
     },
     change (e) {
       console.log(e)

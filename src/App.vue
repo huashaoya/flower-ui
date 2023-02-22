@@ -108,7 +108,7 @@
     <br>
    <div id="modal">
     <fl-button type="primary" @click="modalVisible=true">点击打开 Modal</fl-button>
-    <fl-modal :modalVisible="modalVisible" @close="close">
+    <fl-modal :modalVisible="modalVisible" @closeModal="closeModal">
       <template #footer>
         <fl-button plain @click="modalVisible=false">取消</fl-button>
         <fl-button type="primary" @click="modalVisible=false">确定</fl-button>
@@ -117,7 +117,16 @@
    </div>
     <br>
    <div id="dropdown">
-    <fl-dropdown></fl-dropdown>
+    <fl-dropdown>
+      <fl-dropdownMenu :menuHight="menuHight">
+        <fl-dropdownItem command="hhahf">111</fl-dropdownItem>
+        <fl-dropdownItem>222</fl-dropdownItem>
+        <fl-dropdownItem>222</fl-dropdownItem>
+        <fl-dropdownItem>222</fl-dropdownItem>
+        <fl-dropdownItem>111</fl-dropdownItem>
+        <fl-dropdownItem>222</fl-dropdownItem>
+      </fl-dropdownMenu>
+    </fl-dropdown>
    </div>
     <br>
     <fl-switch v-model="active" activeColor="red" inActiveColor="black"></fl-switch>
@@ -181,14 +190,15 @@ export default {
         { color: '#1989fa', percentage: 0.8 },
         { color: '#6f7ad3', percentage: 1 }
       ],
-      customColor: '#f56c6c'
+      customColor: '#f56c6c',
+      menuHight: 111
     }
   },
   methods: {
     buttonClick (e) {
       alert('点击事件')
     },
-    close (value) {
+    closeModal (value) {
       this.modalVisible = value
     },
     change (e) {
@@ -205,7 +215,18 @@ export default {
       if (this.percentage > 1) {
         this.percentage = 1
       }
+    },
+    handleLength () {
+      console.log(this.menuHight)
+      let dropdownM = document.querySelector('.dropdownMenu')
+      let menuHight = (dropdownM.children.length) * 40
+      this.menuHight = menuHight
+      console.log(menuHight)
+      console.log(this.menuHight)
     }
+  },
+  mounted () {
+    this.handleLength()
   }
 }
 
@@ -221,6 +242,11 @@ export default {
 #app{
 .fl-input{
   width: 200px;
+}
+#dropdown{
+  margin: 20px 0;
+  width: 250px;
+  height: 400px;
 }
 }
 .item{

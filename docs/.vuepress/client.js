@@ -13,7 +13,7 @@ import FlDropdown from './components/dropdown.vue'
 import FlUpload from './components/upload.vue'
 import FlCheckbox from './components/checkbox.vue'
 import FlCheckboxGroup from './components/checkbox-group.vue'
-
+import './components/iconfont.css'
 export default defineClientConfig({
   enhance({ app }) {
     app.component(FlButton.name, FlButton)

@@ -1,0 +1,165 @@
+@font-face {
+  font-family: "iconfont"; /* Project id  */
+  src: url('iconfont.ttf?t=1676169665538') format('truetype');
+}
+
+.fl-icon {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-rss_line:before {
+  content: "\e64a";
+}
+
+.icon-add_circle_line:before {
+  content: "\e715";
+}
+
+.icon-about_line:before {
+  content: "\e716";
+}
+
+.icon-add_line:before {
+  content: "\e717";
+}
+
+.icon-address_book_line:before {
+  content: "\e718";
+}
+
+.icon-adjust_line:before {
+  content: "\e719";
+}
+
+.icon-android_line:before {
+  content: "\e71a";
+}
+
+.icon-alert_line:before {
+  content: "\e71b";
+}
+
+.icon-arow_to_up_line:before {
+  content: "\e71c";
+}
+
+.icon-alarm_2_line:before {
+  content: "\e71d";
+}
+
+.icon-applet_line:before {
+  content: "\e71e";
+}
+
+.icon-announcement_line:before {
+  content: "\e71f";
+}
+
+.icon-arrow_down_circle_line:before {
+  content: "\e720";
+}
+
+.icon-arrow_left_circle_line:before {
+  content: "\e721";
+}
+
+.icon-arrow_right_circle_line:before {
+  content: "\e722";
+}
+
+.icon-arrow_right_line:before {
+  content: "\e723";
+}
+
+.icon-arow_to_down_line:before {
+  content: "\e724";
+}
+
+.icon-activity_line:before {
+  content: "\e725";
+}
+
+.icon-audit_line:before {
+  content: "\e726";
+}
+
+.icon-calendar_search_line:before {
+  content: "\e727";
+}
+
+.icon-certificate_line:before {
+  content: "\e728";
+}
+
+.icon-chart_line_line:before {
+  content: "\e729";
+}
+
+.icon-check_line:before {
+  content: "\e72a";
+}
+
+.icon-check_circle_line:before {
+  content: "\e72b";
+}
+
+.icon-close_line:before {
+  content: "\e72c";
+}
+
+.icon-click_line:before {
+  content: "\e72d";
+}
+
+.icon-edit_2_line:before {
+  content: "\e741";
+}
+
+.icon-emoji_line:before {
+  content: "\e742";
+}
+
+.icon-flag_line:before {
+  content: "\e74d";
+}
+
+.icon-heart_line:before {
+  content: "\e755";
+}
+
+.icon-location_map_line:before {
+  content: "\e764";
+}
+
+.icon-phone_call_line:before {
+  content: "\e786";
+}
+
+.icon-pin_line:before {
+  content: "\e78e";
+}
+
+.icon-print_line:before {
+  content: "\e792";
+}
+
+.icon-thumb_down_line:before {
+  content: "\e7bd";
+}
+
+.icon-thumb_up_line:before {
+  content: "\e7be";
+}
+
+.icon-search_line:before {
+  content: "\e7dd";
+}
+
+.icon-world_line:before {
+  content: "\e7e4";
+}
+

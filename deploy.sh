@@ -14,6 +14,6 @@ git add -A
 git commit -m 'deploy'
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:huashaoya/flower-ui.git master:gh-pages
+git push -f https://github.com/huashaoya/flower-ui master:gh-pages
 
 cd -

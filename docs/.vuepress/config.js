@@ -40,6 +40,7 @@ export default {
           text: '组件文档',
           children: [
             '/guide/README.md',
+            '/guide/组件总览.md',
             '/guide/通用型组件.md',
             '/guide/布局型组件.md',
             '/guide/导航型组件.md',

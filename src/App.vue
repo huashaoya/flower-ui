@@ -127,6 +127,34 @@
       <fl-upload type="success" label="上传图片" :drag="true"></fl-upload>
       <fl-upload type="danger"></fl-upload>
     </div>
+
+    <!-- ***********grid********** -->
+    <br>
+     <fl-row :gutter="[ 8, 8 ]">
+      <fl-col span="12" offset="0" class="item">1</fl-col>
+      <!-- <fl-col span="6" offset="0"></fl-col> -->
+      <fl-col span="6" offset="0" class="item">2</fl-col>
+      <fl-col span="6" offset="0" class="item">3</fl-col>
+      <fl-col span="6" offset="0" class="item">4</fl-col>
+      <fl-col span="6" offset="0" class="item">5</fl-col>
+      <fl-col span="12" offset="0" class="item">6</fl-col>
+      <!-- <fl-col span="6" offset="0"></fl-col> -->
+     </fl-row>
+    <br>
+    <!-- ***********grid********** -->
+    <!-- ***********progress********** -->
+    <br>
+    <fl-progress :percentage="percentage" :color="customColors" type="line" line_height="10"></fl-progress>
+    <br>
+    <fl-progress :percentage="percentage" :color="customColor" type="line" line_height="10" :showPercentage="false"></fl-progress>
+    <br>
+    <fl-button @click="lowerProgress">➖</fl-button>
+    <fl-button @click="addProgress">➕</fl-button>
+    <br>
+    <fl-progress size="200" :percentage="percentage" :color="customColors" type="circle"></fl-progress>
+    <br>
+    <fl-progress size="200" :percentage="percentage" :color="customColor" type="circle" :showPercentage="false"></fl-progress>
+    <!-- ***********progress********** -->
   </div>
 </template>
 
@@ -144,7 +172,16 @@ export default {
       active: false,
       multiple: false,
       btnShow: true,
-      dragShow: false
+      dragShow: false,
+      percentage: 0,
+      customColors: [
+        { color: '#f56c6c', percentage: 0.2 },
+        { color: '#e6a23c', percentage: 0.4 },
+        { color: '#5cb87a', percentage: 0.6 },
+        { color: '#1989fa', percentage: 0.8 },
+        { color: '#6f7ad3', percentage: 1 }
+      ],
+      customColor: '#f56c6c'
     }
   },
   methods: {
@@ -156,6 +193,18 @@ export default {
     },
     change (e) {
       console.log(e)
+    },
+    lowerProgress () {
+      this.percentage -= 0.1
+      if (this.percentage < 0) {
+        this.percentage = 0
+      }
+    },
+    addProgress () {
+      this.percentage += 0.1
+      if (this.percentage > 1) {
+        this.percentage = 1
+      }
     }
   }
 }
@@ -173,5 +222,13 @@ export default {
 .fl-input{
   width: 200px;
 }
+}
+.item{
+  height: 100px;
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
 }
 </style>

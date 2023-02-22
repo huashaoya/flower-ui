@@ -16,6 +16,9 @@ import FlDropdown from './components/dropdown.vue'
 import FlUpload from './components/upload.vue'
 import FlCheckbox from './components/checkbox.vue'
 import FlCheckboxGroup from './components/checkbox-group.vue'
+import FlGridRow from './components/grid-row'
+import FlGridCol from './components/grid-col'
+import FlProgress from './components/progress'
 import './assets/font/iconfont.css'
 // import FlowerUI from '../packages'
 
@@ -35,4 +38,7 @@ app.component(FlDropdown.name, FlDropdown)
 app.component(FlUpload.name, FlUpload)
 app.component(FlCheckbox.name, FlCheckbox)
 app.component(FlCheckboxGroup.name, FlCheckboxGroup)
+app.component(FlGridRow.name, FlGridRow)
+app.component(FlGridCol.name, FlGridCol)
+app.component(FlProgress.name, FlProgress)
 app.mount('#app')

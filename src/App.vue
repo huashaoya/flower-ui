@@ -121,20 +121,21 @@
       <fl-dropdownMenu :menuHight="menuHight">
         <fl-dropdownItem command="jayZhou">兰亭序</fl-dropdownItem>
         <fl-dropdownItem>无关风月</fl-dropdownItem>
-        <fl-dropdownItem>我题序</fl-dropdownItem>
+        <fl-dropdownItem disabled>我题序</fl-dropdownItem>
         <fl-dropdownItem>等你回</fl-dropdownItem>
         <fl-dropdownItem>情字何解</fl-dropdownItem>
-        <fl-dropdownItem>怎落笔不对</fl-dropdownItem>
+        <fl-dropdownItem divided>怎落笔不对</fl-dropdownItem>
       </fl-dropdownMenu>
     </fl-dropdown>
    </div>
     <br>
     <fl-switch v-model="active" activeColor="red" inActiveColor="black"></fl-switch>
-    {{active}}
+    <br>
+    <fl-switch v-model="active" activeText="已激活" inActiveText="未激活"></fl-switch>
     <div class="row">
-      <fl-upload @change="change" :multiple="multiple" :btnShow="btnShow" :dragShow="dragShow"></fl-upload>
+      <fl-upload @change="change" :multiple="multiple" :btnShow="btnShow" :round="true" :dragShow="dragShow"></fl-upload>
       <fl-upload type="success" label="上传图片" :drag="true"></fl-upload>
-      <fl-upload type="danger"></fl-upload>
+      <fl-upload type="danger" :showImage="true"></fl-upload>
     </div>
 
     <!-- ***********grid********** -->

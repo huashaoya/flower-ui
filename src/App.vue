@@ -119,12 +119,12 @@
    <div id="dropdown">
     <fl-dropdown>
       <fl-dropdownMenu :menuHight="menuHight">
-        <fl-dropdownItem command="hhahf">111</fl-dropdownItem>
-        <fl-dropdownItem>222</fl-dropdownItem>
-        <fl-dropdownItem>222</fl-dropdownItem>
-        <fl-dropdownItem>222</fl-dropdownItem>
-        <fl-dropdownItem>111</fl-dropdownItem>
-        <fl-dropdownItem>222</fl-dropdownItem>
+        <fl-dropdownItem command="jayZhou">兰亭序</fl-dropdownItem>
+        <fl-dropdownItem>无关风月</fl-dropdownItem>
+        <fl-dropdownItem>我题序</fl-dropdownItem>
+        <fl-dropdownItem>等你回</fl-dropdownItem>
+        <fl-dropdownItem>情字何解</fl-dropdownItem>
+        <fl-dropdownItem>怎落笔不对</fl-dropdownItem>
       </fl-dropdownMenu>
     </fl-dropdown>
    </div>
@@ -217,12 +217,9 @@ export default {
       }
     },
     handleLength () {
-      console.log(this.menuHight)
       let dropdownM = document.querySelector('.dropdownMenu')
       let menuHight = (dropdownM.children.length) * 40
       this.menuHight = menuHight
-      console.log(menuHight)
-      console.log(this.menuHight)
     }
   },
   mounted () {
@@ -244,8 +241,6 @@ export default {
   width: 200px;
 }
 #dropdown{
-  margin: 20px 0;
-  width: 250px;
   height: 400px;
 }
 }

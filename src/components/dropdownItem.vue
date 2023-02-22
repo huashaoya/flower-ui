@@ -25,8 +25,7 @@ export default {
 <style lang="scss" scoped>
 .dropdownItem{
     box-sizing: border-box;
-    // width: 115px;
-    padding: 0 40px;
+    padding: 0 28px;
     height: 40px;
     text-align: center;
     line-height: 40px;
@@ -35,8 +34,5 @@ export default {
       background-color: rgb(236,245,255);
       color: rgb(102,177,255);
     }
-}
-.divided{
-  border-top: 1px solid black;
 }
 </style>

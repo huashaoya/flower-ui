@@ -1,7 +1,8 @@
 <template>
 <div class="dropdownWrapper">
-  <fl-button id="btn" type="primary" @click="handleClick" @mouseenter="handleHoverA" @mouseleave="handleHoverN">Dropdown</fl-button>
+  <fl-button id="btn" type="primary" @click="handleClick" @mouseenter="handleHoverA" @mouseleave="handleHoverN">Dropdown
     <slot :menuHight="menuHight"></slot>
+</fl-button>
 </div>
 </template>
 
@@ -46,7 +47,8 @@ export default {
         this.timeID = setTimeout(() => {
           dropdownM.classList.remove('negative')
           this.timeID = null
-        }, 200)
+        }, 150)
+        console.log('hover激活')
       }
     },
     handleHoverN () {
@@ -58,7 +60,8 @@ export default {
         this.timeID = setTimeout(() => {
           dropdownM.classList.add('negative')
           this.timeID = null
-        }, 150)
+        }, 300)
+        console.log('hover取消')
       }
     }
   }
@@ -67,13 +70,19 @@ export default {
 
 <style lang="scss" scoped>
 .dropdownWrapper{
-  // border: 3px solid palevioletred;
   position: relative;
-  // width: 250px;
-  // height: 80px;
-  transition: all .2s;
+  display: inline-block;
 }
 #btn{
   width: 100px;
+  &::after{
+    content: 'sry';
+    color: transparent;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    display: block;
+    width: 150px;
+  }
 }
 </style>

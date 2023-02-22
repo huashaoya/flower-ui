@@ -48,7 +48,6 @@ export default {
           dropdownM.classList.remove('negative')
           this.timeID = null
         }, 150)
-        console.log('hover激活')
       }
     },
     handleHoverN () {
@@ -61,7 +60,6 @@ export default {
           dropdownM.classList.add('negative')
           this.timeID = null
         }, 300)
-        console.log('hover取消')
       }
     }
   }

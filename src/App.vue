@@ -121,10 +121,10 @@
       <fl-dropdownMenu :menuHight="menuHight">
         <fl-dropdownItem command="jayZhou">兰亭序</fl-dropdownItem>
         <fl-dropdownItem>无关风月</fl-dropdownItem>
-        <fl-dropdownItem>我题序</fl-dropdownItem>
+        <fl-dropdownItem disabled>我题序</fl-dropdownItem>
         <fl-dropdownItem>等你回</fl-dropdownItem>
         <fl-dropdownItem>情字何解</fl-dropdownItem>
-        <fl-dropdownItem>怎落笔不对</fl-dropdownItem>
+        <fl-dropdownItem divided>怎落笔不对</fl-dropdownItem>
       </fl-dropdownMenu>
     </fl-dropdown>
    </div>

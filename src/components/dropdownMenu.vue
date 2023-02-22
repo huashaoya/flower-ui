@@ -9,8 +9,7 @@ export default {
   name: 'FlDropdownMenu',
   data () {
     return {
-      hight: '',
-      x: '180px'
+      hight: ''
     }
   },
   props: {
@@ -44,12 +43,12 @@ export default {
     padding: 5px 0;
     height: v-bind(hight);
     transition: all .3s;
-    color: rgb(119,121,124);
+    color: rgb(109, 110, 112);
 }
 .negative{
     height: 0px;
+    opacity: 0;
     padding: 0;
     border: 0;
-    opacity: 0;
 }
 </style>

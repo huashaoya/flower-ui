@@ -1,7 +1,7 @@
 <template>
     <div class="fl-upload">
       <div v-show="btnShow">
-        <div class="showFiles">
+        <div class="showFiles" v-show="showImage">
           <li v-for="(item, index) in fileList" :key="index">
             <span>{{item.name}}</span>
             <span @click="deleteFile(index)">删除</span>
@@ -31,22 +31,27 @@ export default {
     type: {
       type: String,
       default: 'parmary'
+      // 按钮的样式
     },
     label: {
       type: String,
       default: '选择文件'
+      // 设置按钮内文字样式
     },
     showImage: {
       type: Boolean,
       default: false
+      // 是否将上传的文件显示出来
     },
     btnShow: {
       type: Boolean,
       default: true
+      // 是否显示按钮上传
     },
     dragShow: {
       type: Boolean,
       default: true
+      // 是否显示拖拽上传区域
     }
   },
   setup (props, content) {

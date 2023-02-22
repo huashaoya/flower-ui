@@ -45,23 +45,24 @@ export default {
       default: false
     },
     closeWrapper: {
-      type: String,
-      default: 'false'
+      type: Boolean,
+      default: false
     }
   },
   methods: {
     handleClose () {
-      this.$emit('close', false)
+      this.$emit('closeModal', false)
     },
     handleCloseWrapper () {
-      if (this.closeWrapper === 'false') {
+      if (this.closeWrapper === false) {
         const content = document.querySelector('.fl-modal')
         content.classList.add('shakeClass')
         setTimeout(() => {
           content.classList.remove('shakeClass')
         }, 400)
+        console.log(this)
       } else {
-        this.$emit('close', false)
+        this.$emit('closeModal', false)
       }
     }
   }

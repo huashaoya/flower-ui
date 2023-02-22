@@ -20,10 +20,7 @@ export default {
   },
   methods: {
     fn () {
-      console.log(this.menuHight)
-      console.log('$$$$$$$$', this.hight)
       this.hight = this.menuHight + 'px'
-      console.log('************', this.hight)
     }
   },
   mounted () {
@@ -42,13 +39,17 @@ export default {
     box-shadow: 2px 2px 3px rgba(224, 219, 219, 0.5);
     position: absolute;
     top: 45px;
-    left: 0px;
+    left: 5px;
     overflow: hidden;
+    padding: 5px 0;
     height: v-bind(hight);
-    transition: all .4s;
+    transition: all .3s;
+    color: rgb(119,121,124);
 }
 .negative{
     height: 0px;
+    padding: 0;
+    border: 0;
     opacity: 0;
 }
 </style>

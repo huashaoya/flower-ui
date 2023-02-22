@@ -21,6 +21,7 @@ import FlCheckboxGroup from './components/checkbox-group.vue'
 import FlGridRow from './components/grid-row'
 import FlGridCol from './components/grid-col'
 import FlProgress from './components/progress'
+import FlAvator from './components/avator.vue'
 import './assets/font/iconfont.css'
 // import FlowerUI from '../packages'
 
@@ -45,4 +46,5 @@ app.component(FlCheckboxGroup.name, FlCheckboxGroup)
 app.component(FlGridRow.name, FlGridRow)
 app.component(FlGridCol.name, FlGridCol)
 app.component(FlProgress.name, FlProgress)
+app.component(FlAvator.name, FlAvator)
 app.mount('#app')

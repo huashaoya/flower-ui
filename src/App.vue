@@ -165,6 +165,10 @@
     <fl-progress size="200" :percentage="percentage" :color="customColor" type="circle" :showPercentage="false"></fl-progress>
     <!-- ***********progress********** -->
   </div>
+  <div>avator:</div>
+  <fl-avator></fl-avator>
+  <fl-avator size="100"></fl-avator>
+  <fl-avator size="100" square src="favicon.ico"></fl-avator>
 </template>
 
 <script>

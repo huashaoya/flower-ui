@@ -130,11 +130,12 @@
    </div>
     <br>
     <fl-switch v-model="active" activeColor="red" inActiveColor="black"></fl-switch>
-    {{active}}
+    <br>
+    <fl-switch v-model="active" activeText="已激活" inActiveText="未激活"></fl-switch>
     <div class="row">
-      <fl-upload @change="change" :multiple="multiple" :btnShow="btnShow" :dragShow="dragShow"></fl-upload>
+      <fl-upload @change="change" :multiple="multiple" :btnShow="btnShow" :round="true" :dragShow="dragShow"></fl-upload>
       <fl-upload type="success" label="上传图片" :drag="true"></fl-upload>
-      <fl-upload type="danger"></fl-upload>
+      <fl-upload type="danger" :showImage="true"></fl-upload>
     </div>
 
     <!-- ***********grid********** -->

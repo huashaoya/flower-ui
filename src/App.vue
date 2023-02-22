@@ -184,11 +184,11 @@ export default {
       dragShow: false,
       percentage: 0,
       customColors: [
-        { color: '#f56c6c', percentage: 0.2 },
-        { color: '#e6a23c', percentage: 0.4 },
-        { color: '#5cb87a', percentage: 0.6 },
-        { color: '#1989fa', percentage: 0.8 },
-        { color: '#6f7ad3', percentage: 1 }
+        { color: '#f56c6c', percentage: 20 },
+        { color: '#e6a23c', percentage: 40 },
+        { color: '#5cb87a', percentage: 60 },
+        { color: '#1989fa', percentage: 80 },
+        { color: '#6f7ad3', percentage: 100 }
       ],
       customColor: '#f56c6c',
       menuHight: 111
@@ -205,15 +205,15 @@ export default {
       console.log(e)
     },
     lowerProgress () {
-      this.percentage -= 0.1
+      this.percentage -= 10
       if (this.percentage < 0) {
         this.percentage = 0
       }
     },
     addProgress () {
-      this.percentage += 0.1
-      if (this.percentage > 1) {
-        this.percentage = 1
+      this.percentage += 10
+      if (this.percentage > 100) {
+        this.percentage = 100
       }
     },
     handleLength () {

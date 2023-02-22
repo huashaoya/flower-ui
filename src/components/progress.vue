@@ -4,12 +4,12 @@
         <!-- 在svg区域内使用view截了一个100 100 的图 -->
         <circle r="50" cx="50" cy="50" class="progress_outer"></circle>
         <circle r="50" cx="50" cy="50" class="progress_inner" :stroke-dasharray="totalProgress" :stroke-dashoffset="currentProgress" :style="{'stroke': currentColor}"></circle>
-         <text x="50" y="50" text-anchor="middle" dominant-baseline="middle" v-show="showPercentage">{{Math.trunc(percentage*100)}}%</text>
+         <text x="50" y="50" text-anchor="middle" dominant-baseline="middle" v-show="showPercentage">{{Math.trunc(percentage)}}%</text>
       </svg>
-      <div class="progress_bar" :style="{ '--width':percentage * 100, '--backgroundColor': currentColor, '--radius':line_height / 2 + 'px','--height':line_height + 'px'}" v-show="type === 'line'">
+      <div class="progress_bar" :style="{ '--width':percentage, '--backgroundColor': currentColor, '--radius':line_height / 2 + 'px','--height':line_height + 'px'}" v-show="type === 'line'">
       </div>
       <text v-show="lineShowPercentage">
-        {{Math.trunc(percentage*100)}}%</text>
+        {{Math.trunc(percentage)}}%</text>
     </div>
 </template>
 
@@ -26,7 +26,6 @@ export default {
       default: 0
     },
     color: {
-      type: [],
       default: 0
     },
     type: {
@@ -49,7 +48,7 @@ export default {
   },
   computed: {
     currentProgress () {
-      return this.totalProgress * (1 - this.percentage)
+      return this.totalProgress * (1 - this.percentage / 100)
     },
     currentColor () {
       for (let index = 0; index < this.color.length; index++) {

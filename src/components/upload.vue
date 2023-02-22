@@ -1,19 +1,23 @@
 <template>
     <div class="fl-upload">
       <div v-show="btnShow">
-        <div class="showFiles" v-show="showImage">
+        <div class="showFiles" v-show="showImage" style="cursor:pointer;">
           <li v-for="(item, index) in fileList" :key="index">
             <span>{{item.name}}</span>
-            <span @click="deleteFile(index)">删除</span>
+            <span @click="deleteFile(index)" style="cursor:pointer;">删除</span>
           </li>
         </div>
         <input class="input" type="file" ref="choose" @change="fileChange" :multiple="multiple">
-        <fl-button @click="handleClick" :type="type">{{label}}</fl-button>
+        <fl-button @click="handleClick" :type="type" :plain="plain" :round="round" :circle="circle" :disabled="disabled" :icon="icon">{{label}}</fl-button>
       </div>
-        <div class="dragArea" ref="drag" :class="{isDragIn:isActive}" @click="handleClick" v-show="dragShow">
-          <span v-show="!isActive">拖拽或点击上传文件</span>
-          <span v-show="isActive">松开即可</span>
-        </div>
+      <ul v-for="(item, index) in imgArr" :key="index" class="imgArr">
+        <img :src="item" alt="">
+        <span @click="deleteFile(index)" style="cursor:pointer;" class="delete2">删除</span>
+      </ul>
+      <div class="dragArea" ref="drag" :class="{isDragIn:isActive}" @click="handleClick" v-show="dragShow">
+        <span v-show="!isActive">拖拽或点击上传文件</span>
+        <span v-show="isActive">松开即可</span>
+      </div>
     </div>
 </template>
 
@@ -52,6 +56,26 @@ export default {
       type: Boolean,
       default: true
       // 是否显示拖拽上传区域
+    },
+    plain: {
+      type: Boolean,
+      default: false
+    },
+    round: {
+      type: Boolean,
+      default: false
+    },
+    circle: {
+      type: Boolean,
+      default: false
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    icon: {
+      type: String,
+      default: 'none'
     }
   },
   setup (props, content) {
@@ -59,6 +83,8 @@ export default {
     const fileList = reactive([])
     const drag = ref(null)
     let isActive = ref(null)
+    let src = ref()
+    let imgArr = ref([])
 
     function handleClick () {
       choose.value.click()
@@ -66,9 +92,14 @@ export default {
     function fileChange (e) {
       fileList.unshift(...e.target.files)
       content.emit('change', fileList)
+      src.value = window.URL.createObjectURL(e.target.files[0])
+      // 图片信息转为临时预览路径
+      imgArr.value.unshift(src.value)
+      console.log(src.value)
     }
     function deleteFile (index) {
       fileList.splice(index, 1)
+      imgArr.value.splice(index, 1)
     }
     function setStyle (boo, color) {
       isActive.value = boo
@@ -93,7 +124,7 @@ export default {
       drag.value.addEventListener('dragleave', (e) => {
         e.stopPropagation()
         e.preventDefault()
-        setStyle(true, 'rgb(86, 168, 235)')
+        setStyle(false, null)
       })
       drag.value.addEventListener('dragover', (e) => {
         e.stopPropagation()
@@ -109,7 +140,9 @@ export default {
       deleteFile,
       drag,
       isActive,
-      setStyle
+      setStyle,
+      src,
+      imgArr
     }
   }
 }
@@ -118,17 +151,28 @@ export default {
 <style lang="scss">
 .fl-upload{
   // display: inline-block;
-  width: 500px;
+  width: 600px;
   margin: 20px 0;
   .input{
     display: none;
   }
   .showFiles{
     li{
+    transition: all 2s;
       line-height: 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+    }
+  }
+  .imgArr{
+    margin: 0;
+    padding: 0;
+    margin-right: 5px;
+    display: inline-block;
+    img{
+      width: 200px;
+      height: 200px;
     }
   }
   .dragArea{
@@ -136,6 +180,7 @@ export default {
     height: 200px;
     border: 2px dashed #000;
     margin: 20px 0;
+    cursor: pointer;
     // transition: all .3s;
     box-sizing: border-box;
     display: flex;

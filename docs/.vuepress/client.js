@@ -10,9 +10,13 @@ import FlFormItem from './components/form-item.vue'
 import FlSwitch from './components/switch.vue'
 import FlModal from './components/modal.vue'
 import FlDropdown from './components/dropdown.vue'
+import FlDropdownMenu from './components/dropdownMenu.vue'
+import FlDropdownItem from './components/dropdownItem.vue'
 import FlUpload from './components/upload.vue'
 import FlCheckbox from './components/checkbox.vue'
 import FlCheckboxGroup from './components/checkbox-group.vue'
+import FlProgress from './components/progress.vue'
+import FlAvator from './components/avator.vue'
 import './components/iconfont.css'
 export default defineClientConfig({
   enhance({ app }) {
@@ -27,8 +31,12 @@ export default defineClientConfig({
     app.component(FlSwitch.name, FlSwitch)
     app.component(FlModal.name, FlModal)
     app.component(FlDropdown.name, FlDropdown)
+    app.component(FlDropdownMenu.name, FlDropdownMenu)
+    app.component(FlDropdownItem.name, FlDropdownItem)
     app.component(FlUpload.name, FlUpload)
     app.component(FlCheckbox.name, FlCheckbox)
     app.component(FlCheckboxGroup.name, FlCheckboxGroup)
+    app.component(FlProgress.name, FlProgress)
+    app.component(FlAvator.name, FlAvator)
   },
 })

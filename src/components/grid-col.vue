@@ -49,13 +49,13 @@ export default {
     $class-prefix: col-;
     @for $n from 1 through 24{
       &.#{$class-prefix}#{$n} {
-        width: ($n/24)*100%;
+        width: calc($n / 24)*100%;
       }
     }
     $class-prefix: offset-;
     @for $n from 1 through 24{
       &.#{$class-prefix}#{$n} {
-        margin-left: ($n/24)*100%;
+        margin-left: calc($n / 24)*100%;
       }
     }
   }

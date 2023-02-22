@@ -39,7 +39,7 @@ export default {
 
 <style lang="scss">
 .fl-input {
-  width: 100%;
+  width: 150px;
   position: relative;
   font-size: 14px;
   display: inline-block;

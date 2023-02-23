@@ -56,7 +56,7 @@ export default {
     },
     dragShow: {
       type: Boolean,
-      default: true
+      default: false
       // 是否显示拖拽上传区域
     },
     plain: {
@@ -226,7 +226,5 @@ export default {
 }
 .isDragIn{
   border: 2px dashed rgb(86, 168, 235) !important;
-  span{
-  }
 }
 </style>

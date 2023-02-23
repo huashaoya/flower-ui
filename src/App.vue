@@ -251,7 +251,7 @@ export default {
 }
 .item{
   height: 100px;
-  background-color: aqua;
+  background-color: rgb(79, 185, 255);
   display: flex;
   justify-content: center;
   align-items: center;

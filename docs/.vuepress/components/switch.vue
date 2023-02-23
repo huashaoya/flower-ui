@@ -1,8 +1,12 @@
 <template>
+  <div class="fl-switch">
+    <span :class="inActiveTextClass">{{inActiveText}}</span>
     <div class="switch" @click="handleClick" :class="[stateDialog]" ref="customColors">
       <input type="checkbox" v-model="stateChange">
       <span class="core"></span>
     </div>
+    <span :class="activeTextClass">{{activeText}}</span>
+  </div>
 </template>
 
 <script>
@@ -21,6 +25,14 @@ export default {
     inActiveColor: {
       type: String,
       defualt: ''
+    },
+    inActiveText: {
+      type: String,
+      defualt: ''
+    },
+    activeText: {
+      type: String,
+      defualt: ''
     }
   },
   // emits: ['update'],
@@ -28,6 +40,8 @@ export default {
     let stateChange = ref(null)
     let customColors = ref(null)
     const stateDialog = ref('off')
+    const activeTextClass = ref('texton')
+    const inActiveTextClass = ref('textoff')
 
     async function handleClick () {
       content.emit('update:modelValue', !props.modelValue)
@@ -35,6 +49,8 @@ export default {
       await nextTick()
       setColor()
       stateDialog.value = props.modelValue ? 'on' : 'off'
+      activeTextClass.value = props.modelValue ? 'texton' : 'textoff'
+      inActiveTextClass.value = !props.modelValue ? 'texton' : 'textoff'
     }
     function setColor () {
       if (props.activeColor || props.inActiveColor) {
@@ -45,19 +61,33 @@ export default {
     onMounted(() => {
       setColor()
       stateDialog.value = props.modelValue ? 'on' : 'off'
+      activeTextClass.value = props.modelValue ? 'texton' : 'textoff'
+      inActiveTextClass.value = !props.modelValue ? 'texton' : 'textoff'
     })
     return {
       stateChange,
       handleClick,
       stateDialog,
-      customColors
+      customColors,
+      activeTextClass,
+      inActiveTextClass
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.fl-switch{
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  span{
+    display: inline-block;
+    font-weight: bold;
+  }
+}
 .switch{
+  margin: 0 5px;
   display: inline-block;
   position: relative;
   width: 60px;
@@ -65,6 +95,7 @@ export default {
   border-radius: 20px;
   transition: all .3s;
   box-sizing: border-box;
+  cursor:pointer;
   span.core:after{
     content: "";
     position: absolute;
@@ -82,14 +113,20 @@ export default {
   }
 }
 .off{
-  background-color: brown;
+  background-color: #f0f0f4;
 }
 .on{
-  background-color: rgb(7, 82, 20);
+  background-color: #00bc12;
   .core::after{
     transform: translateX(60px);
     margin-left: -30px;
   }
+}
+.texton{
+  color: #1f9e2c;
+}
+.textoff{
+  color: black;
 }
 input{
   position: absolute;

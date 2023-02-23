@@ -112,6 +112,9 @@ export default {
         e.stopPropagation()
         e.preventDefault()
         fileList.unshift(...e.dataTransfer.files)
+        src.value = window.URL.createObjectURL(e.dataTransfer.files[0])
+        // 图片信息转为临时预览路径
+        imgArr.value.push(src.value)
         content.emit('change', fileList)
         setStyle(false, null)
       }, false)
@@ -125,7 +128,7 @@ export default {
       drag.value.addEventListener('dragleave', (e) => {
         e.stopPropagation()
         e.preventDefault()
-        setStyle(false, null)
+        setStyle(true, null)
       })
       drag.value.addEventListener('dragover', (e) => {
         e.stopPropagation()

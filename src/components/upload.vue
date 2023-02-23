@@ -10,13 +10,15 @@
         <input class="input" type="file" ref="choose" @change="fileChange" :multiple="multiple">
         <fl-button @click="handleClick" :type="type" :plain="plain" :round="round" :circle="circle" :disabled="disabled" :icon="icon">{{label}}</fl-button>
       </div>
-      <ul v-for="(item, index) in imgArr" :key="index" class="imgArr">
-        <img :src="item" alt="">
-        <span @click="deleteFile(index)" style="cursor:pointer;" class="delete2">删除</span>
-      </ul>
-      <div class="dragArea" ref="drag" :class="{isDragIn:isActive}" @click="handleClick" v-show="dragShow">
-        <span v-show="!isActive">拖拽或点击上传文件</span>
-        <span v-show="isActive">松开即可</span>
+      <div class="drag" v-show="dragShow">
+        <ul v-for="(item, index) in imgArr" :key="index" class="imgArr">
+          <img :src="item" alt="" class="img">
+          <span @click="deleteFile(index)" style="cursor:pointer;" class="delete2">删除</span>
+        </ul>
+        <div class="dragArea" ref="drag" :class="{isDragIn:isActive}" @click="handleClick" >
+          <span v-show="!isActive">拖拽或点击上传文件</span>
+          <span v-show="isActive">松开即可</span>
+        </div>
       </div>
     </div>
 </template>
@@ -94,8 +96,7 @@ export default {
       content.emit('change', fileList)
       src.value = window.URL.createObjectURL(e.target.files[0])
       // 图片信息转为临时预览路径
-      imgArr.value.unshift(src.value)
-      console.log(src.value)
+      imgArr.value.push(src.value)
     }
     function deleteFile (index) {
       fileList.splice(index, 1)
@@ -151,7 +152,7 @@ export default {
 <style lang="scss">
 .fl-upload{
   // display: inline-block;
-  width: 600px;
+  // width: 600px;
   margin: 20px 0;
   .input{
     display: none;
@@ -165,33 +166,61 @@ export default {
       justify-content: space-between;
     }
   }
-  .imgArr{
-    margin: 0;
-    padding: 0;
-    margin-right: 5px;
-    display: inline-block;
-    img{
+  .drag{
+    width: 800px;
+    padding: 20px;
+    box-shadow: 1px 1px 2px 2px rgb(219, 214, 214);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    .imgArr{
+      margin: 0;
+      padding: 0;
+      width: 200px;
+      margin-right: 5px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: end;
+      align-items: flex-end;
+      height: 200px;
+      img{
+        width: 200px ;
+        max-height: 200px;
+        animation: img 3s 1;
+        @keyframes img {
+          0%{opacity: 0;}
+          100%{opacity: 1;}
+        }
+      }
+      span{
+        font-weight: bold;
+      }
+      span:hover{
+        color: rgb(221, 89, 80);
+        transition: all .2s;
+      }
+    }
+    .dragArea{
       width: 200px;
       height: 200px;
-    }
-  }
-  .dragArea{
-    width: 200px;
-    height: 200px;
-    border: 2px dashed #000;
-    margin: 20px 0;
-    cursor: pointer;
-    // transition: all .3s;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    &:hover{
-      border: 2px dashed rgb(86, 168, 235);
-      color: rgb(86, 168, 235);
-    }
-    span{
-      font-size: 30%;
+      border: 1px dashed #000;
+      margin: 20px 0;
+      cursor: pointer;
+      // transition: all .3s;
+      box-sizing: border-box;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      border-radius: 5px;
+      &:hover{
+        border: 1px dashed rgb(86, 168, 235);
+        color: rgb(86, 168, 235);
+      }
+      span{
+        font-size: 30%;
+      }
     }
   }
 }

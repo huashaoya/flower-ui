@@ -78,6 +78,9 @@ export default {
 
 <style lang="scss" scoped>
 .fl-switch{
+  width: 200px;
+  display: flex;
+  justify-content: center;
   span{
     display: inline-block;
     font-weight: bold;
@@ -87,7 +90,7 @@ export default {
   margin: 0 5px;
   display: inline-block;
   position: relative;
-  width: 60px !important;
+  width: 60px;
   height: 30px;
   border-radius: 20px;
   transition: all .3s;

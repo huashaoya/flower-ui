@@ -1,8 +1,11 @@
 <template>
 <div class="dropdownWrapper">
-  <fl-button id="btn" type="primary" @click="handleClick" @mouseenter="handleHoverA" @mouseleave="handleHoverN">Dropdown
+  <fl-button v-if="splitButton" id="btn" type="primary" @click="handleClick" @mouseenter="handleHoverA" @mouseleave="handleHoverN">Dropdown
     <slot :menuHight="menuHight"></slot>
-</fl-button>
+  </fl-button>
+  <div v-if="!splitButton" class="text" @click="handleClick" @mouseenter="handleHoverA" @mouseleave="handleHoverN">Dropdown<span>></span>
+    <slot :menuHight="menuHight"></slot>
+  </div>
 </div>
 </template>
 
@@ -20,6 +23,10 @@ export default {
     activeType: {
       type: String,
       default: 'hover'
+    },
+    splitButton: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {
@@ -48,7 +55,6 @@ export default {
           dropdownM.classList.remove('negative')
           this.timeID = null
         }, 150)
-        console.log('hover激活')
       }
     },
     handleHoverN () {
@@ -61,7 +67,6 @@ export default {
           dropdownM.classList.add('negative')
           this.timeID = null
         }, 300)
-        console.log('hover取消')
       }
     }
   }
@@ -83,6 +88,35 @@ export default {
     left: 0;
     display: block;
     width: 150px;
+  }
+}
+.text{
+  display: inline-block;
+  cursor: pointer;
+  color: #409eff;
+  text-align: center;
+  font-weight: 500;
+  user-select: none;
+  padding:0px 20px;
+  white-space: nowrap;
+  font-size:14px;
+  span{
+    display: inline-block;
+    transform: rotate(90deg);
+    margin-left: 3px;
+  }
+  &::after{
+    content: 'sry';
+    color: transparent;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    display: block;
+    width: 150px;
+}
+  ::v-deep .dropdownMenu{
+    top: 30px;
+    // bottom: -30px;
   }
 }
 </style>

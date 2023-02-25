@@ -13,5 +13,11 @@ module.exports = defineConfig({
       .tap(options => {
         return options
       })
+  },
+  configureWebpack: {
+    output: {
+      library: 'FlowersUi',
+      libraryTarget: 'umd'
+    }
   }
 })

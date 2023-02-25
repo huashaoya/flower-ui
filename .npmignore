@@ -7,3 +7,5 @@ docs/
 vue.config.js
 babel.config.js
 *.map
+deploy.sh
+package.json

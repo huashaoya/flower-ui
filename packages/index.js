@@ -51,8 +51,13 @@ const install = function (app) { // app===Vue
   })
 }
 // 如果是直接引入vue,就自动注册组件
-if (typeof window !== 'undefined' && window.Vue) {
-  install(window.Vue)
-}
+// vue 2.x的写法，淘汰
+// if (typeof window !== 'undefined' && window.Vue) {
+//   install(window.Vue)
+// }
 
-export default install
+export { components, install }
+const FlowersUi = {
+  install
+}
+export default FlowersUi

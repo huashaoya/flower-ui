@@ -4,11 +4,11 @@ heroImage: /logo.png
 actionText: 快速上手 →
 actionLink: /zh/guide/
 features:
-- title: 简洁至上
-  details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
 - title: 基于Vue3
-  details: 享受 Vue + webpack 的开发体验，在 Markdown 中使用 Vue 组件，同时可以使用 Vue 来开发自定义主题。
-- title: 高性能
-  details: VuePress 为每个页面预渲染生成静态的 HTML，同时在页面被加载的时候，将作为 SPA 运行。
+  details: 基于vue3构建，快速引入组件，更少的代码完成更多的工作。
+- title: 个性化
+  details: 组件具有高可自定义度，可以快速创建个性化组件。
+- title: 简洁至上
+  details: 一个以简洁，简单，使用方便为主题的组件库。
 footer: MIT Licensed | Copyright © 2023-present HuaShaoYa
 ---

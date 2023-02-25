@@ -2,8 +2,8 @@ import { defaultTheme } from 'vuepress'
 import { searchPlugin } from '@vuepress/plugin-search'
 export default {
   lang: 'zh-CN',
-  title: 'FlowerUI',
-  description: '欢迎来到FlowerUI组件库文档站',
+  title: 'FlowersUI',
+  description: '欢迎来到FlowersUI组件库文档站',
   head: [
     ['link', { rel: 'icon', href: '/logo.png' }] // 需要被注入到当前页面的 HTML <head> 中的标签
   ],

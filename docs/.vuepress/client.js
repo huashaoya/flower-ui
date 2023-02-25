@@ -17,6 +17,8 @@ import FlCheckbox from './components/checkbox.vue'
 import FlCheckboxGroup from './components/checkbox-group.vue'
 import FlProgress from './components/progress.vue'
 import FlAvator from './components/avator.vue'
+// import FlGridRow from './components/grid-row.vue'
+// import FlGridCol from './components/grid-col.vue'
 import './components/iconfont.css'
 export default defineClientConfig({
   enhance({ app }) {
@@ -38,5 +40,7 @@ export default defineClientConfig({
     app.component(FlCheckboxGroup.name, FlCheckboxGroup)
     app.component(FlProgress.name, FlProgress)
     app.component(FlAvator.name, FlAvator)
+    // app.component(FlGridRow.name, FlGridRow)
+    // app.component(FlGridCol.name, FlGridCol)
   },
 })

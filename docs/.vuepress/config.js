@@ -21,6 +21,7 @@ export default {
     logo: '/logo.png',  
     navbar: [
       { text: '首页', link: '/' },
+      { text: 'github', link: 'https://github.com/huashaoya/flower-ui' },
       // 可指定链接跳转模式：默认target: '_blank'新窗口打开，_self当前窗口打开
       { text: '介绍文档', link: '/guide/' },
       // {
@@ -50,6 +51,7 @@ export default {
         },
       ]
     },
+    sidebarDepth:1,
     search: true, // 设置是否使用导航栏上的搜索框
     searchMaxSuggestions: 10  // 搜索框显示的搜索结果数量
   }),

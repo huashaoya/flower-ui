@@ -50,6 +50,7 @@ export default {
 
 <style lang="scss" scoped>
 .dropdownItem{
+  transition: all .2s;
     box-sizing: border-box;
     padding: 0 20px;
     height: 40px;

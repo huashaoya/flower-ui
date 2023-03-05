@@ -55,10 +55,18 @@ export default {
     },
     handleCloseWrapper () {
       if (this.closeWrapper === false) {
-        const content = document.querySelector('.fl-modal')
-        content.classList.add('shakeClass')
+        const content = document.querySelectorAll('.fl-modal')
+        content.forEach(
+          (Element) => {
+            Element.classList.add('shakeClass')
+          }
+        )
         setTimeout(() => {
-          content.classList.remove('shakeClass')
+          content.forEach(
+            (Element) => {
+              Element.classList.remove('shakeClass')
+            }
+          )
         }, 400)
         console.log(this)
       } else {
@@ -80,7 +88,7 @@ export default {
   margin: 0;
   z-index: 999;
   background-color: rgba(0, 0, 0, 0.5);
-
+  user-select: none;
   .fl-modal {
     position: relative;
     margin: 15vh auto 50px;

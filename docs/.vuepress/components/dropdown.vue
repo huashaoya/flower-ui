@@ -1,10 +1,14 @@
 <template>
 <div class="dropdownWrapper">
-  <fl-button v-if="splitButton" id="btn" type="primary" @click="handleClick" @mouseenter="handleHoverA" @mouseleave="handleHoverN">Dropdown
-    <slot :menuHight="menuHight"></slot>
+  <fl-button v-if="splitButton" id="btn" type="primary" @click.stop="handleClick" @mouseenter="handleHoverA" @mouseleave="handleHoverN">Dropdown
+    <transition name="fade">
+    <div v-show="active"><slot></slot></div>
+    </transition>
   </fl-button>
   <div v-if="!splitButton" class="text" @click="handleClick" @mouseenter="handleHoverA" @mouseleave="handleHoverN">Dropdown<span>></span>
-    <slot :menuHight="menuHight"></slot>
+    <transition name="fade">
+    <div v-show="active"><slot></slot></div>
+    </transition>
   </div>
 </div>
 </template>
@@ -15,8 +19,7 @@ export default {
   data () {
     return {
       active: false,
-      timeID: null,
-      menuHight: ''
+      timeID: null
     }
   },
   props: {
@@ -31,12 +34,9 @@ export default {
   },
   methods: {
     triggerClick () {
-      let dropdownM = document.querySelector('.dropdownMenu')
       if (this.active === true) {
-        dropdownM.classList.add('negative')
         this.active = !this.active
       } else {
-        dropdownM.classList.remove('negative')
         this.active = !this.active
       }
     },
@@ -47,24 +47,23 @@ export default {
     },
     handleHoverA () {
       if (this.activeType === 'hover') {
-        let dropdownM = document.querySelector('.dropdownMenu')
         if (this.timeID !== null) {
           return
         }
         this.timeID = setTimeout(() => {
-          dropdownM.classList.remove('negative')
+          this.active = !this.active
           this.timeID = null
         }, 150)
       }
     },
     handleHoverN () {
       if (this.activeType === 'hover') {
-        let dropdownM = document.querySelector('.dropdownMenu')
         if (this.timeID !== null) {
           clearTimeout(this.timeID)
         }
         this.timeID = setTimeout(() => {
-          dropdownM.classList.add('negative')
+          this.isNegative = !this.isNegative
+          this.active = !this.active
           this.timeID = null
         }, 300)
       }
@@ -74,11 +73,26 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.fade-enter-active {
+  animation: fade .1s;
+}
+.fade-leave-active {
+  animation: fade .2s reverse;
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .dropdownWrapper{
   position: relative;
   display: inline-block;
 }
 #btn{
+  position: relative;
   width: 100px;
   &::after{
     content: 'sry';
@@ -87,10 +101,11 @@ export default {
     bottom: -10px;
     left: 0;
     display: block;
-    width: 150px;
+    width: 100px;
   }
 }
 .text{
+  position: relative;
   display: inline-block;
   cursor: pointer;
   color: #409eff;
@@ -112,7 +127,7 @@ export default {
     bottom: -10px;
     left: 0;
     display: block;
-    width: 150px;
+    width: 100px;
 }
   ::v-deep .dropdownMenu{
     top: 30px;

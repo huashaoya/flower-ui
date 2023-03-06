@@ -1,6 +1,6 @@
 <template>
 <div class="dropdownWrapper">
-  <fl-button v-if="splitButton" id="btn" type="primary" @click.stop="handleClick" @mouseenter="handleHoverA" @mouseleave="handleHoverN">Dropdown
+  <fl-button v-if="splitButton" id="btn" type="success" @click.stop="handleClick" @mouseenter="handleHoverA" @mouseleave="handleHoverN">Dropdown
     <transition name="fade">
     <div v-show="active"><slot></slot></div>
     </transition>

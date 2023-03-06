@@ -15,8 +15,8 @@
       </div>
       <div class="fl-modal_footer" v-if="$slots.footer">
         <slot name="footer">
-         <fl-button plain>取消</fl-button>
-         <fl-button type="primary">确定</fl-button>
+         <fl-button class="foo" plain>取消</fl-button>
+         <fl-button type="success">确定</fl-button>
         </slot>
       </div>
     </div>
@@ -163,5 +163,9 @@ export default {
   100% {
     transform: translateX(0);
   }
+}
+.foo:hover,.foo:focus{
+  color: #67c23a!important;
+  border-color: #67c23a!important;
 }
 </style>

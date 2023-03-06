@@ -108,7 +108,7 @@ export default {
   position: relative;
   display: inline-block;
   cursor: pointer;
-  color: #409eff;
+  color: rgb(55, 160, 2);
   text-align: center;
   font-weight: 500;
   user-select: none;

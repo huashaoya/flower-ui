@@ -58,8 +58,8 @@ export default {
     line-height: 40px;
     cursor: pointer;
     &:hover{
-      background-color: rgb(236,245,255);
-      color: rgb(102,177,255);
+      background-color: rgba(186, 231, 166, 0.623);
+      color: rgb(55, 160, 2);
     }
 }
 .divided{

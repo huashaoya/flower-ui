@@ -58,14 +58,7 @@ export default {
     },
     handleHoverN () {
       if (this.activeType === 'hover') {
-        if (this.timeID !== null) {
-          clearTimeout(this.timeID)
-        }
-        this.timeID = setTimeout(() => {
-          this.isNegative = !this.isNegative
-          this.active = !this.active
-          this.timeID = null
-        }, 300)
+        this.active = !this.active
       }
     }
   }

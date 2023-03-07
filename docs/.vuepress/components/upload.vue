@@ -183,7 +183,7 @@ export default {
       margin-right: 5px;
       display: flex;
       flex-wrap: wrap;
-      justify-content: end;
+      align-items: flex-end;
       align-items: flex-end;
       height: 200px;
       img{
